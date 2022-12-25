@@ -1,0 +1,16 @@
+{% extends 'main/base.html'%}
+{% block title%}
+index page
+{% endblock%}
+{% block content%}
+    <h1>Hello, world! This is my main page</h1>
+    {% if tasks %}
+      {% for el in tasks %}
+        <h3>{{el.title}}</h3>
+        <p>{{el.description}}</p>
+      {% endfor %}
+    {% else %}
+    <p>No tasks</p>
+    {% endif %}
+    <img src="https://la2mod.ru/wp-content/uploads/2019/04/memy-5.png" class="img-fluid" alt="complicated">
+{% endblock%}
