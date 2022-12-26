@@ -6,7 +6,7 @@ from .forms import TaskForm
 def index(request):
 
     tasks1 = Task.objects.all()
-    return render(request, 'Main/index.html', {'title': 'main page', 'tasks': tasks1})
+    return render(request, 'Main/main.html', {'title': 'main page', 'tasks': tasks1})
 
 
 def about(request):
@@ -22,7 +22,7 @@ def tasks(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-            redirect('home')
+            redirect('main')
 
     form = TaskForm()
     context = {

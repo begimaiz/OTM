@@ -3,13 +3,12 @@
 tasks page
 {% endblock%}
 {% block content%}
-    <h1>Hello, world! This is my About page</h1>
-    {% csrf_token %}
-    {{form.title}}
-    {{form.description}}
+    <h1>Hello, world! This is my tasks page</h1>
+
     <form method="post">
-      <input type="text" placeholder="Please enter tittle for your Task">
-      <textarea placeholder="write description for your task"></textarea>
-      <button type="button">Crate Task</button>
+        {% csrf_token %}
+        {{form.title}}
+        {{form.description}}
+        <button type="submit" class='btn btn-success'>Crate Task</button>
     </form>
 {% endblock%}
